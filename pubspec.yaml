@@ -1,0 +1,26 @@
+name: cs2_skins_marketplace_frontend
+description: Pure frontend Flutter app for a CS2 skins marketplace (no backend). Demo-only with mock data.
+publish_to: "none"
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  provider: ^6.1.2
+  intl: ^0.19.0
+  # Present but optional; the app runs without initializing Firebase.
+  firebase_core: ^3.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
