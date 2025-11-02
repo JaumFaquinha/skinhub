@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import '../models/skin.dart';
 
 class AppState extends ChangeNotifier {
@@ -9,6 +10,12 @@ class AppState extends ChangeNotifier {
   List<Skin> get cart => List.unmodifiable(_cart);
   double get walletBalance => _walletBalance;
   List<String> get txLog => List.unmodifiable(_txLog);
+
+  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode get themeMode => _themeMode;
+
+  Color _brandSeed = const Color(0xFF1EA7FD);
+  Color get brandSeed => _brandSeed;
 
   void addToCart(Skin s) {
     _cart.add(s);
@@ -24,7 +31,8 @@ class AppState extends ChangeNotifier {
     final total = _cart.fold<double>(0.0, (sum, s) => sum + s.price);
     if (total <= _walletBalance) {
       _walletBalance -= total;
-      _txLog.add('Comprou ${_cart.length} item(ns) por R\$ ${total.toStringAsFixed(2)}');
+      _txLog.add(
+          'Comprou ${_cart.length} item(ns) por R\$ ${total.toStringAsFixed(2)}');
       _cart.clear();
       notifyListeners();
       return true;
@@ -40,6 +48,16 @@ class AppState extends ChangeNotifier {
 
   void simulateTrade(String toUser, Skin s) {
     _txLog.add('Oferta de troca enviada para $toUser: ${s.weapon} | ${s.name}');
+    notifyListeners();
+  }
+
+  void setThemeMode(ThemeMode mode) {
+    _themeMode = mode;
+    notifyListeners();
+  }
+
+  void setBrandSeed(Color color) {
+    _brandSeed = color;
     notifyListeners();
   }
 }
