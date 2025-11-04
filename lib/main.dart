@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'CS2 Skins',
-            theme: AppTheme.light(seed: state.brandSeed),
+            theme: AppTheme.dark(seed: state.brandSeed),
             darkTheme: AppTheme.dark(seed: state.brandSeed),
             themeMode: state.themeMode, // ← alterna claro/escuro
             initialRoute: '/',
@@ -39,8 +39,7 @@ class MyApp extends StatelessWidget {
               '/wallet': (_) => const WalletScreen(),
               '/trade': (_) => const TradeScreen(),
               '/settings': (_) => const SettingsScreen(),
-              '/register': (_) =>
-                  const RegisterScreen(), // se já criou a tela de registro
+              '/register': (_) => const RegisterScreen(), // se já criou a tela de registro
             },
           );
         },
