@@ -44,7 +44,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const FlutterLogo(size: 64),
+                  Image.asset(
+                  'assets/images/logo.png',
+                  height: 150,
+                  width: 150,
+                ),
                     const SizedBox(height: 18),
                     TextFormField(
                       controller: _email,
