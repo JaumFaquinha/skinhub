@@ -14,7 +14,7 @@ class AppState extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
   ThemeMode get themeMode => _themeMode;
 
-  Color _brandSeed = const Color(0xFF1EA7FD);
+  Color _brandSeed = const Color.fromARGB(255, 255, 187, 0);
   Color get brandSeed => _brandSeed;
 
   void addToCart(Skin s) {

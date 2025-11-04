@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static ThemeData light(
-      {Color seed = const Color.fromARGB(255, 190, 30, 253)}) {
+      {Color seed = const Color.fromARGB(255, 255, 206, 71)}) {
     final scheme =
         ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.light);
     final base = ThemeData(
@@ -33,7 +33,7 @@ class AppTheme {
   }
 
   static ThemeData dark(
-      {Color seed = const Color.fromARGB(255, 190, 30, 253)}) {
+      {Color seed = const Color.fromARGB(255, 255, 187, 0)}) {
     final scheme =
         ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.dark);
     final base = ThemeData(
